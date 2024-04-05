@@ -1,0 +1,16 @@
+name: HTTP Batch Playgroung
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  send-batch-http-request:
+    runs-on: ubuntu-latest
+    environment: main
+    steps:
+      - name: Deploy Stage
+        uses: juancolchete/batch-http-request@0
+        with:
+          url: '${{ vars.URL_TEST }}'
+          method: 'POST'
