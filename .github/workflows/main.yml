@@ -10,7 +10,7 @@ jobs:
     environment: main
     steps:
       - name: Deploy Stage
-        uses: juancolchete/batch-http-request@v0.0.2
+        uses: juancolchete/batch-http-request@v0.0.3
         with:
           url: '${{ vars.URL_TEST }}'
           method: 'POST'
