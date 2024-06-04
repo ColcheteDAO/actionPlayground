@@ -13,4 +13,4 @@ jobs:
         uses: juancolchete/batch-http-request@main
         with:
           url: '${{ vars.URL_TEST }}'
-          method: 'GET'
+          method: 'POST'
