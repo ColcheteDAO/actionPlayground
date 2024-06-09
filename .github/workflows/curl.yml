@@ -11,7 +11,7 @@ jobs:
         run: curl --location -sS ${{ secrets.FIRST_REQ_URL }}
       - name: get property from API
         id: get-prop
-        run: USERNAME=$(curl --location -sS ${{ vars.MOCK_API }}/getUserInfo | jq -r .userName) && echo $USERNAME >> "$GITHUB_OUTPUT"
+        run: USERNAME=$(curl --location -sS ${{ vars.MOCK_API }}/getUserInfo | jq -r .userName) && echo "$USERNAME">> "$GITHUB_OUTPUT"
       - name: show api property
         id: show-prop
         run: echo ${{ steps.get-prop.outputs }}
