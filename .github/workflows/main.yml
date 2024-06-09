@@ -1,8 +1,7 @@
 name: HTTP Batch Playgroung
 
 on:
-  push:
-    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   send-batch-http-request:
