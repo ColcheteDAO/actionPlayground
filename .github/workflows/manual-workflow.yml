@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print hello
-        run: echo "Hello calanga"
+        run: echo "Hello ${{ vars.MSG }}"
