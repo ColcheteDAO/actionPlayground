@@ -1,0 +1,11 @@
+name: curl
+on:
+  workflow_dispatch:
+
+jobs:
+  simple-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first request
+        id: firstreq
+        run: curl --location ${{ secrets.FIRST_REQ_URL }} 
