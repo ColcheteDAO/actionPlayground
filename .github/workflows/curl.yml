@@ -8,4 +8,4 @@ jobs:
     steps:
       - name: first request
         id: firstreq
-        run: curl --location ${{ secrets.FIRST_REQ_URL }} 
+        run: curl --location -sS ${{ secrets.FIRST_REQ_URL }} 
