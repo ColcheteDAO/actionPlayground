@@ -1,0 +1,11 @@
+name: Schedule
+on:
+  schedule:
+    - cron: "* * * * *"
+jobs:
+  do-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: send request
+        id: send-request
+        run: curl --location -sS ${{ secrets.FIRST_REQ_URL }}/getNumber
