@@ -14,4 +14,4 @@ jobs:
         run: USERNAME=$(curl --location -sS ${{ vars.MOCK_API }}/getUserInfo | jq .userName) && echo "username=$USERNAME" >> "$GITHUB_OUTPUT"
       - name: show api property
         id: show-prop
-        run: echo ${{ steps.get-prop.outputs }}
+        run: echo ${{ steps.get-prop.outputs.username }}
