@@ -7,3 +7,4 @@ on:
 jobs:
   call-reusable-workflow:
     uses: colchetedao/actionPlayground/.github/workflows/curl.yml@main
+    secrets: inherit
