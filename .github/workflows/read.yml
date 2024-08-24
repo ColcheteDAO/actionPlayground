@@ -1,0 +1,10 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print README
+        run: cat README.md
