@@ -1,0 +1,12 @@
+name: Read JSON property
+on:
+  workflow_dispatch:
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: read version
+        run: cat package.json | jq -r .version
