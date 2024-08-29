@@ -6,4 +6,4 @@ COPY . .
 
 RUN yarn install
 
-CMD [ "node", "app.js" ]
+CMD [ "yarn", "start" ]
