@@ -1,0 +1,21 @@
+name: Deploy Express
+on:
+  workflow_dispatch:
+env:
+  REGISTRY_URL_APP: ${{ vars.REGISTRY_URL }}/${{ vars.EXPRESS_APP_NAME }}:${{ github.ref_name }}
+
+jobs:
+  build-push-docker-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Login on registry
+        run: docker login ${{ vars.REGISTRY_URL }} -u ${{ secrets.REGISTRY_USER }} -p ${{ secrets.REGISTRY_PASS }}
+      
+      - name: build
+        run: cd ${{ vars.EXPRESS_REGISTRY_FOLDER }} &&
+            docker build . --file ./Dockerfile --tag ${{ env.REGISTRY_URL_APP }}
+
+      - name: Push image
+        run: docker push ${{ env.REGISTRY_URL_APP }}
