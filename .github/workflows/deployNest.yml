@@ -1,4 +1,4 @@
-name: Deploy Next
+name: Deploy Nest
 on:
   workflow_dispatch:
 env:
