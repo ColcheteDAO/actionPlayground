@@ -1,0 +1,14 @@
+name: Upper Lower
+on:
+  workflow_dispatch:
+
+jobs:
+  read-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: print repo uppper
+        run: echo "${{ github.event.repository.name }}" | tr '[:lower:]' '[:upper:]'
+      - name: print repo lower
+        run: echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]'
