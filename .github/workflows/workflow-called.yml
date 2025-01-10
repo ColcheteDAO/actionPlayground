@@ -1,0 +1,12 @@
+name: Workflow Called
+on:
+  workflow_call:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "Hello ${{ vars.MSG }}"
+      - name: show api key
+        run: API_KEY=${{ secrets.API_KEY }} && echo "Api key len:${#API_KEY}"
