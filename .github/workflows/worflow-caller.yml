@@ -1,4 +1,4 @@
-name: Manual Workflow
+name: Worflow caller
 on:
   workflow_dispatch:
 
