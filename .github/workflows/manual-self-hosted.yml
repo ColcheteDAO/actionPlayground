@@ -1,0 +1,12 @@
+name: Manual Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: self-hosted
+    steps:
+      - name: print hello
+        run: echo "Hello ${{ vars.MSG }}"
+      - name: show api key
+        run: API_KEY=${{ secrets.API_KEY }} && echo "Api key len:${#API_KEY}"
